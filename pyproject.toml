@@ -1,0 +1,106 @@
+[tool.poetry]
+name = "security-bot"
+version = "0.1.0"
+description = "Security Bot"
+authors = [
+    "Ivan Zhirov <zhirovivan@gmail.com>",
+    "Valerio Rico <5669698+V-Rico@users.noreply.github.com>",
+]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.87.0"
+uvicorn = "^0.20.0"
+httpx = "^0.23.1"
+celery = "^5.2.7"
+redis = "^4.3.5"
+requests = "^2.28.1"
+toml = "^0.10.2"
+sentry-sdk = "^1.11.1"
+gitpython = "^3.1.29"
+yarl = "^1.8.1"
+pyyaml = "^6.0"
+slack-sdk = "^3.19.4"
+python-slugify = "^7.0.0"
+sqlalchemy = "^1.4.45"
+alembic = "^1.8.1"
+prometheus-client = "^0.15.0"
+asyncpg = "^0.27.0"
+aiohttp = "^3.8.3"
+boto3 = "^1.26.91"
+pydantic = "^1.10.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^6.2.5"
+tox = "^3.24.0"
+pytest-asyncio = "^0.16.0"
+pytest-cov = "^3.0.0"
+black = "^22.10.0"
+isort = "^5.10.1"
+bandit = "^1.7.0"
+mypy = "^0.991"
+flake8 = "^5.0.4"
+pyclean = "^2.0.0"
+packaging = "^21.0"
+respx = "^0.19.0"
+asynctest = "^0.13.0"
+types-requests = "^2.28.11.5"
+types-python-slugify = "^7.0.0.1"
+types-pyyaml = "^6.0.12.2"
+types-toml = "^0.10.8.1"
+pytest-dotenv = "^0.5.2"
+pytest-celery = "^0.0.0"
+types-sqlalchemy = "^1.4.53.19"
+greenlet = "^2.0.1"
+faker = "^16.7.0"
+moto = "^4.1.4"
+polyfactory = "^2.3.2"
+
+[build-system]
+requires = ["poetry>=1.1.0"]
+build-backend = "poetry.masonry.api"
+
+[tool.black]
+line-length = 87
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = 'build\/|buck-out\/|dist\/|_build\/|.git\/|.hg\/|.mypy_cache\/|.tox\/|.venv\/|proto\/|stubs\/|migrations\/'
+
+[tool.mypy]
+ignore_missing_imports = true
+warn_return_any = true
+warn_redundant_casts = true
+warn_unused_configs = true
+plugins = ['pydantic.mypy']
+exclude = [
+    '.git',
+    '.mypy_cache',
+    '.pytest_cache',
+    '.run',
+    '.cache',
+    '.venv',
+    'app/alembic'
+]
+
+[tool.isort]
+profile = 'black'
+line_length = 87
+atomic = true
+skip = [
+    '.git',
+    '.mypy_cache',
+    '.pytest_cache',
+    '.run',
+    '.cache',
+    '.venv',
+    'app/alembic'
+]
+
+[tool.mypy-pytest]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+python_files = ['tests.py', 'test_*.py', '*_tests.py']
+env_files = '.env.dev'
+addopts = ["--cov", "-vv"]

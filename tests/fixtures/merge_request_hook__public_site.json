@@ -1,0 +1,127 @@
+{
+  "object_kind": "merge_request",
+  "event_type": "merge_request",
+  "user": {
+    "id": 662,
+    "name": "Valerio Rico",
+    "username": "valerio.rico",
+    "avatar_url": "https://git.env.local/uploads/-/system/user/avatar/662/avatar.png",
+    "email": "example@mail.env.local"
+  },
+  "project": {
+    "id": 164,
+    "name": "Public Site",
+    "description": "",
+    "web_url": "https://git.env.local/public-site/backend",
+    "avatar_url": null,
+    "git_ssh_url": "git@git.env.local:public-site/backend.git",
+    "git_http_url": "https://git.env.local/public-site/backend.git",
+    "namespace": "public-site",
+    "visibility_level": 0,
+    "path_with_namespace": "public-site/backend",
+    "default_branch": "master",
+    "ci_config_path": null,
+    "homepage": "https://git.env.local/public-site/backend",
+    "url": "git@git.env.local:public-site/backend.git",
+    "ssh_url": "git@git.env.local:public-site/backend.git",
+    "http_url": "https://git.env.local/public-site/backend.git"
+  },
+  "object_attributes": {
+    "assignee_id": null,
+    "author_id": 662,
+    "created_at": "2022-01-11 11:49:13 UTC",
+    "description": "test",
+    "head_pipeline_id": null,
+    "id": 48872,
+    "iid": 1,
+    "last_edited_at": null,
+    "last_edited_by_id": null,
+    "merge_commit_sha": null,
+    "merge_error": null,
+    "merge_params": {
+      "force_remove_source_branch": "1"
+    },
+    "merge_status": "cannot_be_merged",
+    "merge_user_id": null,
+    "merge_when_pipeline_succeeds": false,
+    "milestone_id": null,
+    "source_branch": "61.58.0",
+    "source_project_id": 164,
+    "state_id": 1,
+    "target_branch": "master",
+    "target_project_id": 164,
+    "time_estimate": 0,
+    "title": "Test",
+    "updated_at": "2022-01-11 11:49:13 UTC",
+    "updated_by_id": null,
+    "url": "https://git.env.local/public-site/backend/-/merge_requests/209",
+    "source": {
+      "id": 164,
+      "name": "Public Site",
+      "description": "",
+      "web_url": "https://git.env.local/public-site/backend",
+      "avatar_url": null,
+      "git_ssh_url": "git@git.env.local:public-site/backend.git",
+      "git_http_url": "https://git.env.local/public-site/backend.git",
+      "namespace": "public-site",
+      "visibility_level": 0,
+      "path_with_namespace": "public-site/backend",
+      "default_branch": "master",
+      "ci_config_path": null,
+      "homepage": "https://git.env.local/public-site/backend",
+      "url": "git@git.env.local:public-site/backend.git",
+      "ssh_url": "git@git.env.local:public-site/backend.git",
+      "http_url": "https://git.env.local/public-site/backend.git"
+    },
+    "target": {
+      "id": 164,
+      "name": "Public Site",
+      "description": "",
+      "web_url": "https://git.env.local/public-site/backend",
+      "avatar_url": null,
+      "git_ssh_url": "git@git.env.local:public-site/backend.git",
+      "git_http_url": "https://git.env.local/public-site/backend.git",
+      "namespace": "public-site",
+      "visibility_level": 0,
+      "path_with_namespace": "public-site/backend",
+      "default_branch": "master",
+      "ci_config_path": null,
+      "homepage": "https://git.env.local/public-site/backend",
+      "url": "git@git.env.local:public-site/backend.git",
+      "ssh_url": "git@git.env.local:public-site/backend.git",
+      "http_url": "https://git.env.local/public-site/backend.git"
+    },
+    "last_commit": {
+      "id": "6cfe17a9b11dfbe179ab593a4c7bf14deffb713f",
+      "message": "Update version",
+      "title": "Update version",
+      "timestamp": "2022-01-11T10:39:57+00:00",
+      "url": "https://git.env.local/public-site/backend/-/commit/6cfe17a9b11dfbe179ab593a4c7bf14deffb713f",
+      "author": {
+        "name": "Valerio Rico",
+        "email": "valerio.rico@mail.env.local"
+      }
+    },
+    "work_in_progress": false,
+    "total_time_spent": 0,
+    "time_change": 0,
+    "human_total_time_spent": null,
+    "human_time_change": null,
+    "human_time_estimate": null,
+    "assignee_ids": [
+
+    ],
+    "state": "opened"
+  },
+  "labels": [
+
+  ],
+  "changes": {
+  },
+  "repository": {
+    "name": "Public Site",
+    "url": "git@git.env.local:public-site/backend.git",
+    "description": "",
+    "homepage": "https://git.env.local/public-site/backend"
+  }
+}

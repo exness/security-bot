@@ -1,0 +1,62 @@
+# jobs configuration yml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: security-bot-configuration
+data:
+  config.yml: |
+    version: 1.0
+    
+    components:
+      gitleaks:
+        handler_name: "gitleaks"
+        config:
+          format: "json"
+      defectdojo:
+        handler_name: "defectdojo"
+        env:
+          url: "DEFECTDOJO__URL"
+          secret_key: "DEFECTDOJO__TOKEN"
+          user: "DEFECTDOJO__USER"
+          lead_id: "DEFECTDOJO__USER_ID"
+      slack:
+        handler_name: "slack"
+        config:
+          render_limit: 10
+          channels:
+            - security-bot
+        env:
+          token: "SLACK_TOKEN"
+    
+    jobs:
+      - name: Merge Request Job
+        rules:
+          gitlab:
+            event_type: "merge_request"
+        scans:
+          - gitleaks
+        outputs:
+          - defectdojo
+        notifications:
+          - slack
+---
+# environment variables
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: security-bot-configuration-envs
+data:
+  SENTRY_DSN: "sentry_dsn"
+  SECBOT_POSTGRES_DSN: "postgres_dsn"
+  GITLAB_CONFIGS: '[{"host":"https://git.env.local/","webhook_secret_token":"SecretStr","auth_token":"SecretStr","prefix":"GIT_LOCAL"}]'
+  DEFECTDOJO__URL: "https://defectdojo.env.local"
+  DEFECTDOJO__TOKEN: "defectdojo_token"
+  DEFECTDOJO__USER: "defectdojo_username"
+  DEFECTDOJO__USER_ID: "10"
+  SLACK_TOKEN: "slack_token"
+  CELERY_BROKER_URL: "redis://security-bot-redis-svc:6379/0"
+  CELERY_RESULT_BACKEND: "redis://security-bot-redis-svc:6379/0"
+  SRE_METRIC_LABEL_TEAM: "SECURITY"
+  SRE_METRIC_LABEL_SERVICE: "security-bot"
+  TRACING_TAGS_HOST: "security-bot.env.local"
+  TRACING_TAGS_CLUSTER: "security-local"

@@ -1,0 +1,141 @@
+{
+    "object_kind": "merge_request",
+    "event_type": "merge_request",
+    "user":
+    {
+        "id": 1287,
+        "name": "Ivan Zhirov",
+        "username": "ivan.zhirov",
+        "avatar_url": "https://git.env.local/uploads/-/system/user/avatar/1287/avatar.png",
+        "email": "example@mail.env.local"
+    },
+    "project":
+    {
+        "id": 6617,
+        "name": "Example Project",
+        "description": "",
+        "web_url": "https://git.env.local/secbot-test-group/example-project",
+        "avatar_url": null,
+        "git_ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+        "git_http_url": "https://git.env.local/secbot-test-group/example-project.git",
+        "namespace": "secbot-test-group",
+        "visibility_level": 0,
+        "path_with_namespace": "secbot-test-group/example-project",
+        "default_branch": "main",
+        "ci_config_path": null,
+        "homepage": "https://git.env.local/secbot-test-group/example-project",
+        "url": "git@git.env.local:secbot-test-group/example-project.git",
+        "ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+        "http_url": "https://git.env.local/secbot-test-group/example-project.git"
+    },
+    "object_attributes":
+    {
+        "assignee_id": null,
+        "author_id": 1287,
+        "created_at": "2023-02-02T09:44:56.081Z",
+        "description": "",
+        "head_pipeline_id": null,
+        "id": 83588,
+        "iid": 4,
+        "last_edited_at": null,
+        "last_edited_by_id": null,
+        "merge_commit_sha": null,
+        "merge_error": null,
+        "merge_params":
+        {
+            "force_remove_source_branch": "1"
+        },
+        "merge_status": "unchecked",
+        "merge_user_id": null,
+        "merge_when_pipeline_succeeds": false,
+        "milestone_id": null,
+        "source_branch": "duplicate-2",
+        "source_project_id": 6617,
+        "state_id": 1,
+        "target_branch": "main",
+        "target_project_id": 6617,
+        "time_estimate": 0,
+        "title": "Duplicate 2",
+        "updated_at": "2023-02-07T13:51:22.027Z",
+        "updated_by_id": null,
+        "url": "https://git.env.local/secbot-test-group/example-project/-/merge_requests/4",
+        "source":
+        {
+            "id": 6617,
+            "name": "Example Project",
+            "description": "",
+            "web_url": "https://git.env.local/secbot-test-group/example-project",
+            "avatar_url": null,
+            "git_ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+            "git_http_url": "https://git.env.local/secbot-test-group/example-project.git",
+            "namespace": "secbot-test-group",
+            "visibility_level": 0,
+            "path_with_namespace": "secbot-test-group/example-project",
+            "default_branch": "main",
+            "ci_config_path": null,
+            "homepage": "https://git.env.local/secbot-test-group/example-project",
+            "url": "git@git.env.local:secbot-test-group/example-project.git",
+            "ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+            "http_url": "https://git.env.local/secbot-test-group/example-project.git"
+        },
+        "target":
+        {
+            "id": 6617,
+            "name": "Example Project",
+            "description": "",
+            "web_url": "https://git.env.local/secbot-test-group/example-project",
+            "avatar_url": null,
+            "git_ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+            "git_http_url": "https://git.env.local/secbot-test-group/example-project.git",
+            "namespace": "secbot-test-group",
+            "visibility_level": 0,
+            "path_with_namespace": "secbot-test-group/example-project",
+            "default_branch": "main",
+            "ci_config_path": null,
+            "homepage": "https://git.env.local/secbot-test-group/example-project",
+            "url": "git@git.env.local:secbot-test-group/example-project.git",
+            "ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+            "http_url": "https://git.env.local/secbot-test-group/example-project.git"
+        },
+        "last_commit":
+        {
+            "id": "ff01dde062e9d8b4636fc88d9d01017800422b05",
+            "message": "Hey ya\n",
+            "title": "Hey ya",
+            "timestamp": "2023-02-07T15:51:13+02:00",
+            "url": "https://git.env.local/secbot-test-group/example-project/-/commit/ff01dde062e9d8b4636fc88d9d01017800422b05",
+            "author":
+            {
+                "name": "Ivan Zhirov",
+                "email": "zhirovivan@gmail.com"
+            }
+        },
+        "work_in_progress": false,
+        "total_time_spent": 0,
+        "time_change": 0,
+        "human_total_time_spent": null,
+        "human_time_change": null,
+        "human_time_estimate": null,
+        "assignee_ids":
+        [],
+        "reviewer_ids":
+        [],
+        "labels":
+        [],
+        "state": "opened",
+        "blocking_discussions_resolved": true,
+        "first_contribution": false,
+        "detailed_merge_status": "unchecked"
+    },
+    "labels":
+    [],
+    "changes":
+    {},
+    "repository":
+    {
+        "name": "Example Project",
+        "url": "git@git.env.local:secbot-test-group/example-project.git",
+        "description": "",
+        "homepage": "https://git.env.local/secbot-test-group/example-project"
+    }
+}

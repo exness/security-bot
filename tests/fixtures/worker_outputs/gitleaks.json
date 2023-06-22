@@ -1,0 +1,20 @@
+[
+  {
+    "Description": "RSA private key",
+    "StartLine": 1,
+    "EndLine": 1,
+    "StartColumn": 8,
+    "EndColumn": 38,
+    "Match": "-----BEGIN RSA PRIVATE KEY-----",
+    "Secret": "-----BEGIN RSA PRIVATE KEY-----",
+    "File": "leaks.py",
+    "Commit": "9fd386858fea24cf4ed693a7ee6f553e3f7a4c49",
+    "Entropy": 0,
+    "Author": "Valerio Rico",
+    "Email": "valerio.rico@mail.env.local",
+    "Date": "2022-01-17T09:59:57Z",
+    "Message": "Add new file",
+    "Tags": [],
+    "RuleID": "RSA-PK"
+  }
+]

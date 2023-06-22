@@ -1,0 +1,84 @@
+{
+    "object_kind": "push",
+    "event_name": "push",
+    "before": "5823620546f7624a111148d1bf60833f9e02c475",
+    "after": "23d5e3ab8e4dcda32a7acfb8343bfcfd12471e0a",
+    "ref": "refs/heads/main",
+    "checkout_sha": "23d5e3ab8e4dcda32a7acfb8343bfcfd12471e0a",
+    "message": null,
+    "user_id": 1287,
+    "user_name": "Ivan Zhirov",
+    "user_username": "ivan.zhirov",
+    "user_email": "",
+    "user_avatar": "https://git.env.local/uploads/-/system/user/avatar/1287/avatar.png",
+    "project_id": 6617,
+    "project":
+    {
+        "id": 6617,
+        "name": "Example Project",
+        "description": "",
+        "web_url": "https://git.env.local/secbot-test-group/example-project",
+        "avatar_url": null,
+        "git_ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+        "git_http_url": "https://git.env.local/secbot-test-group/example-project.git",
+        "namespace": "secbot-test-group",
+        "visibility_level": 0,
+        "path_with_namespace": "secbot-test-group/example-project",
+        "default_branch": "main",
+        "ci_config_path": null,
+        "homepage": "https://git.env.local/secbot-test-group/example-project",
+        "url": "git@git.env.local:secbot-test-group/example-project.git",
+        "ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+        "http_url": "https://git.env.local/secbot-test-group/example-project.git"
+    },
+    "commits":
+    [
+        {
+            "id": "23d5e3ab8e4dcda32a7acfb8343bfcfd12471e0a",
+            "message": "Added python file",
+            "title": "Added python file",
+            "timestamp": "2022-12-07T10:20:12+00:00",
+            "url": "https://git.env.local/secbot-test-group/example-project/-/commit/23d5e3ab8e4dcda32a7acfb8343bfcfd12471e0a",
+            "author":
+            {
+                "name": "Valerio Rico",
+                "email": "valerio.rico@mail.env.local"
+            },
+            "added": ["app.py"],
+            "modified": [],
+            "removed": []
+        },
+        {
+            "id": "5823620546f7624a111148d1bf60833f9e02c475",
+            "message": "Update README.md",
+            "title": "Update README.md",
+            "timestamp": "2022-01-11T10:39:57+00:00",
+            "url": "https://git.env.local/secbot-test-group/example-project/-/commit/5823620546f7624a111148d1bf60833f9e02c475",
+            "author":
+            {
+                "name": "Valerio Rico",
+                "email": "valerio.rico@mail.env.local"
+            },
+            "added":
+            [
+                "README.md"
+            ],
+            "modified":
+            [],
+            "removed":
+            []
+        }
+    ],
+    "total_commits_count": 2,
+    "push_options": {},
+    "repository":
+    {
+        "name": "Example Project",
+        "url": "git@git.env.local:secbot-test-group/example-project.git",
+        "description": "",
+        "homepage": "https://git.env.local/secbot-test-group/example-project",
+        "git_http_url": "https://git.env.local/secbot-test-group/example-project.git",
+        "git_ssh_url": "git@git.env.local:secbot-test-group/example-project.git",
+        "visibility_level": 0
+    }
+}

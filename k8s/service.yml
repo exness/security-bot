@@ -1,0 +1,47 @@
+# security bot service
+apiVersion: v1
+kind: Service
+metadata:
+  name: security-bot-svc
+  labels:
+    app: security-bot-svc
+spec:
+  type: NodePort
+  ports:
+    - name: security-bot
+      protocol: TCP
+      port: 5000
+  selector:
+      app: security-bot
+---
+# security gateway service
+apiVersion: v1
+kind: Service
+metadata:
+  name: security-bot-gw-svc
+  labels:
+    app: security-bot-gw-svc
+spec:
+  type: NodePort
+  ports:
+    - name: security-bot-gw
+      protocol: TCP
+      port: 5001
+  selector:
+      app: security-bot-gw
+---
+# redis service
+apiVersion: v1
+kind: Service
+metadata:
+  name: security-bot-redis-svc
+  labels:
+    app: security-bot-redis-svc
+spec:
+  type: NodePort
+  ports:
+    - name: security-bot-redis
+      protocol: TCP
+      port: 6379
+  selector:
+      app: security-bot-redis

@@ -1,0 +1,173 @@
+# bot service account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: security-bot
+---
+# security bot deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: security-bot
+  labels:
+    app: security-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: security-bot
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: security-bot
+    spec:
+      serviceAccountName: security-bot
+      containers:
+        - name: security-bot
+          image: exness/security-bot:latest
+          command: [ "docker-entrypoint.sh" ]
+          args: [ "start_app" ]
+          envFrom:
+            - configMapRef:
+                name: security-bot-configuration-envs
+          volumeMounts:
+            - name: security-bot-configuration-volume
+              mountPath: /exness/app/config.yml
+              subPath: config.yml
+          ports:
+          - containerPort: 5000
+            protocol: TCP
+          resources:
+            limits:
+              cpu: 0.5
+              memory: 1Gi
+            requests:
+              cpu: 0.5
+              memory: 1Gi
+      volumes:
+        - name: security-bot-configuration-volume
+          configMap:
+            name: security-bot-configuration
+---
+# security gateway deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: security-bot-gw
+  labels:
+    app: security-bot-gw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: security-bot-gw
+  template:
+    metadata:
+      labels:
+        app: security-bot-gw
+    spec:
+      serviceAccountName: security-bot
+      containers:
+        - name: security-bot-gw
+          image: exness/security-bot:latest
+          command: [ "docker-entrypoint.sh" ]
+          args: [ "start_security_gateway" ]
+          envFrom:
+            - configMapRef:
+                name: security-bot-configuration-envs
+          volumeMounts:
+            - name: security-bot-configuration-volume
+              mountPath: /exness/app/config.yml
+              subPath: config.yml
+          ports:
+            - containerPort: 5001
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 0.5
+              memory: 0.5Gi
+            requests:
+              cpu: 0.5
+              memory: 0.5Gi
+      volumes:
+        - name: security-bot-configuration-volume
+          configMap:
+            name: security-bot-configuration
+---
+# celery deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: security-bot-celery
+  labels:
+    app: security-bot-celery
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: security-bot-celery
+  template:
+    metadata:
+      labels:
+        app: security-bot-celery
+    spec:
+      serviceAccountName: security-bot
+      containers:
+        - name: security-bot-celery
+          image: exness/security-bot:latest
+          command: [ "docker-entrypoint.sh" ]
+          args: [ "start_celery" ]
+          envFrom:
+            - configMapRef:
+                name: security-bot-configuration-envs
+          volumeMounts:
+            - name: security-bot-configuration-volume
+              mountPath: /exness/app/config.yml
+              subPath: config.yml
+          resources:
+            limits:
+              cpu: 1
+              memory: 4Gi
+            requests:
+              cpu: 1
+              memory: 4Gi
+      volumes:
+        - name: security-bot-configuration-volume
+          configMap:
+            name: security-bot-configuration
+---
+# redis deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: security-bot-redis
+  labels:
+    app: security-bot-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: security-bot-redis
+  template:
+    metadata:
+      labels:
+        app: security-bot-redis
+    spec:
+      serviceAccountName: security-bot-redis
+      containers:
+        - name: security-bot-redis
+          image: "redis:6.2-alpine"
+          resources:
+            limits:
+              cpu: 1
+              memory: 1Gi
+            requests:
+              cpu: 1
+              memory: 1Gi
+---
+# redis service account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: security-bot-redis

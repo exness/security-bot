@@ -1,0 +1,127 @@
+{
+  "object_kind": "merge_request",
+  "event_type": "merge_request",
+  "user": {
+    "id": 1337,
+    "name": "Firstname Lastname",
+    "username": "not.exists",
+    "avatar_url": "https://git.env.local/uploads/-/system/user/avatar/1337/avatar.png",
+    "email": "not.exists@mail.env.local"
+  },
+  "project": {
+    "id": 1337,
+    "name": "Example Project",
+    "description": "",
+    "web_url": "https://git.env.local/security/example-project",
+    "avatar_url": null,
+    "git_ssh_url": "git@git.env.local:security/example-project.git",
+    "git_http_url": "https://git.env.local/security/example-project.git",
+    "namespace": "security",
+    "visibility_level": 0,
+    "path_with_namespace": "security/example-project",
+    "default_branch": "main",
+    "ci_config_path": null,
+    "homepage": "https://git.env.local/security/example-project",
+    "url": "git@git.env.local:security/example-project.git",
+    "ssh_url": "git@git.env.local:security/example-project.git",
+    "http_url": "https://git.env.local/security/example-project.git"
+  },
+  "object_attributes": {
+    "assignee_id": null,
+    "author_id": 1337,
+    "created_at": "2011-11-11 11:33:37 UTC",
+    "description": "test",
+    "head_pipeline_id": null,
+    "id": 48872,
+    "iid": 1,
+    "last_edited_at": null,
+    "last_edited_by_id": null,
+    "merge_commit_sha": null,
+    "merge_error": null,
+    "merge_params": {
+      "force_remove_source_branch": "1"
+    },
+    "merge_status": "unchecked",
+    "merge_user_id": null,
+    "merge_when_pipeline_succeeds": false,
+    "milestone_id": null,
+    "source_branch": "test",
+    "source_project_id": 1337,
+    "state_id": 1,
+    "target_branch": "main",
+    "target_project_id": 1337,
+    "time_estimate": 0,
+    "title": "Test",
+    "updated_at": "2011-11-11 11:33:37 UTC",
+    "updated_by_id": null,
+    "url": "https://git.env.local/security/example-project/-/merge_requests/1",
+    "source": {
+      "id": 1337,
+      "name": "Example Project",
+      "description": "",
+      "web_url": "https://git.env.local/security/example-project",
+      "avatar_url": null,
+      "git_ssh_url": "git@git.env.local:security/example-project.git",
+      "git_http_url": "https://git.env.local/security/example-project.git",
+      "namespace": "security",
+      "visibility_level": 0,
+      "path_with_namespace": "security/example-project",
+      "default_branch": "main",
+      "ci_config_path": null,
+      "homepage": "https://git.env.local/security/example-project",
+      "url": "git@git.env.local:security/example-project.git",
+      "ssh_url": "git@git.env.local:security/example-project.git",
+      "http_url": "https://git.env.local/security/example-project.git"
+    },
+    "target": {
+      "id": 1337,
+      "name": "Example Project",
+      "description": "",
+      "web_url": "https://git.env.local/security/example-project",
+      "avatar_url": null,
+      "git_ssh_url": "git@git.env.local:security/example-project.git",
+      "git_http_url": "https://git.env.local/security/example-project.git",
+      "namespace": "security",
+      "visibility_level": 0,
+      "path_with_namespace": "security/example-project",
+      "default_branch": "main",
+      "ci_config_path": null,
+      "homepage": "https://git.env.local/security/example-project",
+      "url": "git@git.env.local:security/example-project.git",
+      "ssh_url": "git@git.env.local:security/example-project.git",
+      "http_url": "https://git.env.local/security/example-project.git"
+    },
+    "last_commit": {
+      "id": "5823620546f7624a111148d1bf60833f9e02c475",
+      "message": "Update README.md",
+      "title": "Update README.md",
+      "timestamp": "2011-11-11T13:33:37+00:00",
+      "url": "https://git.env.local/security/example-project/-/commit/5823620546f7624a111148d1bf60833f9e02c475",
+      "author": {
+        "name": "Firstname Lastname",
+        "email": "not.exists@mail.env.local"
+      }
+    },
+    "work_in_progress": false,
+    "total_time_spent": 0,
+    "time_change": 0,
+    "human_total_time_spent": null,
+    "human_time_change": null,
+    "human_time_estimate": null,
+    "assignee_ids": [
+
+    ],
+    "state": "opened"
+  },
+  "labels": [
+
+  ],
+  "changes": {
+  },
+  "repository": {
+    "name": "Example Project",
+    "url": "git@git.env.local:security/example-project.git",
+    "description": "",
+    "homepage": "https://git.env.local/security/example-project"
+  }
+}

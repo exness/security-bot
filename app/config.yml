@@ -1,0 +1,34 @@
+version: 1.0
+
+components:
+  gitleaks:
+    handler_name: "gitleaks"
+    config:
+      format: "json"
+  defectdojo:
+    handler_name: "defectdojo"
+    env:
+      url: "DEFECTDOJO__URL"
+      secret_key: "DEFECTDOJO__TOKEN"
+      user: "DEFECTDOJO__USER"
+      lead_id: "DEFECTDOJO__USER_ID"
+  slack:
+    handler_name: "slack"
+    config:
+      render_limit: 10
+      channels:
+        - secbot-test
+    env:
+      token: "SLACK_TOKEN"
+
+jobs:
+  - name: Just example of merge request test
+    rules:
+      gitlab:
+        event_type: "merge_request"
+    scans:
+      - gitleaks
+    outputs:
+      - defectdojo
+    notifications:
+      - slack

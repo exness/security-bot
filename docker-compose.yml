@@ -1,0 +1,64 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env.dev
+    volumes:
+      - ./app/:/opt/app/
+    depends_on:
+      - redis
+    command: start_app
+
+  security_gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    env_file:
+      - .env.dev
+    volumes:
+      - ./app/:/opt/app/
+    depends_on:
+      - redis
+    command: start_security_gateway
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.dev
+    volumes:
+      - ./app/:/opt/app/
+    depends_on:
+      - app
+      - redis
+    command: start_celery
+
+  redis:
+    image: redis:6.2-alpine
+    ports:
+      - "127.0.0.1:6379:6379"
+
+  db:
+    image: postgres:14
+    restart: always
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
+    environment:
+      POSTGRES_DB: secbot
+      POSTGRES_USER: secbot
+      POSTGRES_PASSWORD: foobar
+      PGDATA: /data/db
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - db:/data/db
+
+volumes:
+  db:

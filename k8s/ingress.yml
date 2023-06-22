@@ -1,0 +1,30 @@
+# ingress configuration
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: security-bot-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "10s"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300s"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300s"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  tls:
+  - hosts:
+    - security-bot.env.local
+    secretName: sec-bot-tls-certs
+  rules:
+  - host: security-bot.env.local
+    http:
+      paths:
+      - path: /inputs(/|$)(.*)
+        pathType: Prefix
+        backend:
+          serviceName: security-bot-svc
+          servicePort: 5000
+      - path: /gateway(/|$)(.*)
+        pathType: Prefix
+        backend:
+          serviceName: security-bot-gw-svc
+          servicePort: 5001
