@@ -9,9 +9,9 @@ Security Bot - Security checks orchestration tool
 
 The [Security Bot](docs/index.rst) (SecBot) service introduces an additional collection of checks to the SDLC to identify security issues in corporate assets
 
-Reach out to our [Discord server](https://discordapp.com/invite/MqHBT6mg) to communicate with the team more effectively
+Reach out to our [Discord server](https://discord.gg/WgNbaG3Z45) to communicate with the team more effectively
 
-[![Discord Server](https://discordapp.com/api/guilds/1113355944101957703/widget.png?style=banner3)](https://discordapp.com/invite/MqHBT6mg)
+[![Discord Server](https://discordapp.com/api/guilds/1113355944101957703/widget.png?style=banner3)](https://discord.gg/WgNbaG3Z45)
 
 **Technologies: [FastAPI](https://fastapi.tiangolo.com/), [Celery](https://docs.celeryq.dev/en/stable/) + Redis, [SQLAlchemy](https://www.sqlalchemy.org/) + Postgres, Pytest, and others**
 
